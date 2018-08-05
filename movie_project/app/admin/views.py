@@ -31,7 +31,7 @@ def admin_login_req(f):
     return decorated_function
 
 
-# 权限控制装饰器,
+# 权限控制装饰器
 def admin_auth(f):
     @wraps(f)
     def decorated_function(*args, **kwargs):
