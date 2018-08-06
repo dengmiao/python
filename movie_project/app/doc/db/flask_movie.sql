@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50520
 File Encoding         : 65001
 
-Date: 2018-08-05 15:34:15
+Date: 2018-08-06 22:59:48
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -53,7 +53,7 @@ CREATE TABLE `adminlog` (
   KEY `admin_id` (`admin_id`),
   KEY `ix_Adminlog_addtime` (`addtime`),
   CONSTRAINT `adminlog_ibfk_1` FOREIGN KEY (`admin_id`) REFERENCES `admin` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of adminlog
@@ -81,6 +81,16 @@ INSERT INTO `adminlog` VALUES ('20', '3', '127.0.0.1', '2018-08-05 15:14:36');
 INSERT INTO `adminlog` VALUES ('21', '1', '127.0.0.1', '2018-08-05 15:15:05');
 INSERT INTO `adminlog` VALUES ('22', '1', '127.0.0.1', '2018-08-05 15:21:14');
 INSERT INTO `adminlog` VALUES ('23', '3', '127.0.0.1', '2018-08-05 15:33:44');
+INSERT INTO `adminlog` VALUES ('24', '1', '127.0.0.1', '2018-08-05 16:48:43');
+INSERT INTO `adminlog` VALUES ('25', '3', '127.0.0.1', '2018-08-05 16:48:59');
+INSERT INTO `adminlog` VALUES ('26', '1', '127.0.0.1', '2018-08-05 17:10:04');
+INSERT INTO `adminlog` VALUES ('27', '1', '127.0.0.1', '2018-08-05 19:19:10');
+INSERT INTO `adminlog` VALUES ('28', '1', '127.0.0.1', '2018-08-05 20:55:41');
+INSERT INTO `adminlog` VALUES ('29', '3', '127.0.0.1', '2018-08-05 20:56:56');
+INSERT INTO `adminlog` VALUES ('30', '1', '127.0.0.1', '2018-08-05 20:57:14');
+INSERT INTO `adminlog` VALUES ('31', '1', '127.0.0.1', '2018-08-05 21:54:58');
+INSERT INTO `adminlog` VALUES ('32', '3', '127.0.0.1', '2018-08-05 21:55:09');
+INSERT INTO `adminlog` VALUES ('33', '1', '127.0.0.1', '2018-08-06 20:14:49');
 
 -- ----------------------------
 -- Table structure for auth
@@ -315,12 +325,14 @@ CREATE TABLE `user` (
   UNIQUE KEY `face` (`face`),
   UNIQUE KEY `uuid` (`uuid`),
   KEY `ix_user_addtime` (`addtime`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of user
 -- ----------------------------
 INSERT INTO `user` VALUES ('1', 'zhangsan', '123456', '123@qq.com', '19908237863', '张三', '201712211609272740001.jpg', '2018-08-05 09:37:57', '5ba33a90-9850-11e8-8851-4ccc6ae02670');
+INSERT INTO `user` VALUES ('2', 'lisi123', 'pbkdf2:sha256:50000$c7T8norz$e2099cc199da91cb3efad541987f36f4fde814e094393118f288a3cca40f1266', 'lisi@qq.com', '19912345678', '阿斯达', '20180806224656da67c35f0e05404e8d2cab0a7d29fd59.jpg', '2018-08-06 21:25:18', 'f5420f2403324da394025cd996633152');
+INSERT INTO `user` VALUES ('3', 'wangwu', 'pbkdf2:sha256:50000$nSN9UL3C$45a4b47dd9957ceda6fd9bdb91ef684cd78a8102e53eb4569b4fe206c3f65a69', 'wang@qq.com', '19912345677', null, null, '2018-08-06 21:26:16', '26e2c345cc6b4f4085ef690d496fff58');
 
 -- ----------------------------
 -- Table structure for userlog
@@ -335,7 +347,7 @@ CREATE TABLE `userlog` (
   KEY `user_id` (`user_id`),
   KEY `ix_userlog_addtime` (`addtime`),
   CONSTRAINT `userlog_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of userlog
@@ -343,3 +355,7 @@ CREATE TABLE `userlog` (
 INSERT INTO `userlog` VALUES ('1', '1', '127.0.0.1', '2018-08-05 11:20:13');
 INSERT INTO `userlog` VALUES ('2', '1', '127.0.0.1', '2018-08-05 11:20:25');
 INSERT INTO `userlog` VALUES ('3', '1', '127.0.0.1', '2018-08-05 11:20:39');
+INSERT INTO `userlog` VALUES ('4', '1', '127.0.0.1', '2018-08-06 21:41:20');
+INSERT INTO `userlog` VALUES ('5', '2', '127.0.0.1', '2018-08-06 21:42:46');
+INSERT INTO `userlog` VALUES ('6', '2', '127.0.0.1', '2018-08-06 21:48:38');
+INSERT INTO `userlog` VALUES ('7', '2', '127.0.0.1', '2018-08-06 22:47:56');
