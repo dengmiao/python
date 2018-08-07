@@ -120,6 +120,7 @@ class LoginForm(FlaskForm):
         }
     )
 
+
 class UserdetailForm(FlaskForm):
     name = StringField(
         label="账号",
@@ -179,5 +180,37 @@ class UserdetailForm(FlaskForm):
         render_kw={
             "class": "btn btn-success",
             "span": "glyphicon glyphicon-saved"
+        }
+    )
+
+
+class PwdForm(FlaskForm):
+    """密码表单"""
+    old_pwd = PasswordField(
+        label="旧密码",
+        validators=[
+            DataRequired("请输入旧密码!")
+        ],
+        description="旧密码",
+        render_kw={
+            "class": "form-control",
+            "placeholder": "请输入旧密码！"
+        }
+    )
+    new_pwd = PasswordField(
+        label="新密码",
+        validators=[
+            DataRequired("请输入新密码!")
+        ],
+        description="新密码",
+        render_kw={
+            "class": "form-control",
+            "placeholder": "请输入新密码！"
+        }
+    )
+    submit = SubmitField(
+        '修改密码',
+        render_kw={
+            "class": "btn btn-success"
         }
     )
