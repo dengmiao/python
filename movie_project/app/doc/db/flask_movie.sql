@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50520
 File Encoding         : 65001
 
-Date: 2018-08-06 22:59:48
+Date: 2018-08-09 22:59:55
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -161,12 +161,13 @@ CREATE TABLE `comment` (
   KEY `ix_comment_addtime` (`addtime`),
   CONSTRAINT `comment_ibfk_1` FOREIGN KEY (`movie_id`) REFERENCES `movie` (`id`),
   CONSTRAINT `comment_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of comment
 -- ----------------------------
 INSERT INTO `comment` VALUES ('2', '女主很漂亮', '3', '1', '2018-08-05 09:51:33');
+INSERT INTO `comment` VALUES ('3', '<p>av画质<img src=\"http://img.baidu.com/hi/jx2/j_0068.gif\"/></p>', '3', '2', '2018-08-09 22:16:52');
 
 -- ----------------------------
 -- Table structure for movie
@@ -198,7 +199,7 @@ CREATE TABLE `movie` (
 -- ----------------------------
 -- Records of movie
 -- ----------------------------
-INSERT INTO `movie` VALUES ('3', 'the gifted S01E08', '2018080508253629921ae424f041478aa035d02a26d832.mp4', '天赋异禀 S01E08', '20180805082537a88151afb1a444b093462b2130bff54b.jpg', '4', '0', '0', '1', '美国', '2018-08-02', '5', '2018-08-05 07:54:21');
+INSERT INTO `movie` VALUES ('3', 'the gifted S01E08', '2018080508253629921ae424f041478aa035d02a26d832.mp4', '天赋异禀 S01E08', '20180805082537a88151afb1a444b093462b2130bff54b.jpg', '4', '20', '0', '1', '美国', '2018-08-02', '5', '2018-08-05 07:54:21');
 
 -- ----------------------------
 -- Table structure for moviecol
@@ -331,7 +332,7 @@ CREATE TABLE `user` (
 -- Records of user
 -- ----------------------------
 INSERT INTO `user` VALUES ('1', 'zhangsan', '123456', '123@qq.com', '19908237863', '张三', '201712211609272740001.jpg', '2018-08-05 09:37:57', '5ba33a90-9850-11e8-8851-4ccc6ae02670');
-INSERT INTO `user` VALUES ('2', 'lisi123', 'pbkdf2:sha256:50000$c7T8norz$e2099cc199da91cb3efad541987f36f4fde814e094393118f288a3cca40f1266', 'lisi@qq.com', '19912345678', '阿斯达', '20180806224656da67c35f0e05404e8d2cab0a7d29fd59.jpg', '2018-08-06 21:25:18', 'f5420f2403324da394025cd996633152');
+INSERT INTO `user` VALUES ('2', 'lisi123', 'pbkdf2:sha256:50000$OYv24i7q$449f982f3bc5714750621918adc3b07bd8c86e215bbbdd6b15e9cae634b37735', 'lisi@qq.com', '19912345678', '阿斯达', '20180806224656da67c35f0e05404e8d2cab0a7d29fd59.jpg', '2018-08-06 21:25:18', 'f5420f2403324da394025cd996633152');
 INSERT INTO `user` VALUES ('3', 'wangwu', 'pbkdf2:sha256:50000$nSN9UL3C$45a4b47dd9957ceda6fd9bdb91ef684cd78a8102e53eb4569b4fe206c3f65a69', 'wang@qq.com', '19912345677', null, null, '2018-08-06 21:26:16', '26e2c345cc6b4f4085ef690d496fff58');
 
 -- ----------------------------
@@ -347,7 +348,7 @@ CREATE TABLE `userlog` (
   KEY `user_id` (`user_id`),
   KEY `ix_userlog_addtime` (`addtime`),
   CONSTRAINT `userlog_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of userlog
@@ -359,3 +360,14 @@ INSERT INTO `userlog` VALUES ('4', '1', '127.0.0.1', '2018-08-06 21:41:20');
 INSERT INTO `userlog` VALUES ('5', '2', '127.0.0.1', '2018-08-06 21:42:46');
 INSERT INTO `userlog` VALUES ('6', '2', '127.0.0.1', '2018-08-06 21:48:38');
 INSERT INTO `userlog` VALUES ('7', '2', '127.0.0.1', '2018-08-06 22:47:56');
+INSERT INTO `userlog` VALUES ('8', '2', '127.0.0.1', '2018-08-07 21:18:53');
+INSERT INTO `userlog` VALUES ('9', '2', '127.0.0.1', '2018-08-07 21:49:28');
+INSERT INTO `userlog` VALUES ('10', '2', '127.0.0.1', '2018-08-07 21:49:51');
+INSERT INTO `userlog` VALUES ('11', '2', '127.0.0.1', '2018-08-07 21:50:12');
+INSERT INTO `userlog` VALUES ('12', '2', '127.0.0.1', '2018-08-07 21:51:15');
+INSERT INTO `userlog` VALUES ('13', '2', '127.0.0.1', '2018-08-07 21:56:53');
+INSERT INTO `userlog` VALUES ('14', '2', '127.0.0.1', '2018-08-07 21:57:18');
+INSERT INTO `userlog` VALUES ('15', '2', '127.0.0.1', '2018-08-08 21:20:33');
+INSERT INTO `userlog` VALUES ('16', '2', '127.0.0.1', '2018-08-08 21:30:45');
+INSERT INTO `userlog` VALUES ('17', '2', '127.0.0.1', '2018-08-09 21:53:55');
+INSERT INTO `userlog` VALUES ('18', '2', '127.0.0.1', '2018-08-09 22:06:54');
